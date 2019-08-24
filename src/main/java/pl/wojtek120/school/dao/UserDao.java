@@ -16,6 +16,12 @@ public class UserDao {
     private static final String FIND_ALL_USERS_QUERY = "SELECT * FROM programming_school.users";
     private static final String FIND_ALL_BY_GROUP_QUERY = "SELECT * FROM programming_school.users WHERE group_id=?";
 
+    /**
+     * Function to create new user record
+     *
+     * @param user exercise data model
+     * @return created exercise model
+     */
     public User create(User user) {
         try (Connection connection = DbUtil.getConnection()) {
             PreparedStatement statement = connection.prepareStatement(CREATE_USER_QUERY, Statement.RETURN_GENERATED_KEYS);
@@ -40,6 +46,12 @@ public class UserDao {
         return user;
     }
 
+    /**
+     * Function to read user record by chosen id
+     *
+     * @param id id of record to read
+     * @return object of model that was read
+     */
     public User read(int id) {
 
         try (Connection connection = DbUtil.getConnection()) {
@@ -58,6 +70,11 @@ public class UserDao {
         return null;
     }
 
+    /**
+     * Function to update user record
+     *
+     * @param user object to be updated
+     */
     public void update(User user) {
         try (Connection connection = DbUtil.getConnection()) {
             PreparedStatement statement = connection.prepareStatement(UPDATE_USER_QUERY);
@@ -73,6 +90,11 @@ public class UserDao {
         }
     }
 
+    /**
+     * Function to delete user record
+     *
+     * @param id id of record to be deleted
+     */
     public void delete(int id) {
         try (Connection connection = DbUtil.getConnection()) {
             PreparedStatement statement = connection.prepareStatement(DELETE_USER_QUERY);
@@ -83,10 +105,21 @@ public class UserDao {
         }
     }
 
+    /**
+     * Function to return list of all user records from database
+     *
+     * @return list of all records
+     */
     public List<User> findAll() {
         return getUsers(-1, FIND_ALL_USERS_QUERY);
     }
 
+    /**
+     * Function to return list of all user records thad belongs to specified in parameter group
+     *
+     * @param groupId id of the group to which returned users must belong to
+     * @return list of records
+     */
     public List<User> findAllByGroupId(int groupId) {
         return getUsers(groupId, FIND_ALL_BY_GROUP_QUERY);
     }
@@ -113,6 +146,12 @@ public class UserDao {
         }
     }
 
+    /**
+     * Function to put data from result set to model
+     *
+     * @param resultSet result set
+     * @return model with data
+     */
     private User putDataFromResultSetIntoUser(ResultSet resultSet) {
         User user = new User();
         try {

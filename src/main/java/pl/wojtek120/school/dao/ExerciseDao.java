@@ -42,7 +42,7 @@ public class ExerciseDao {
     }
 
     /**
-     * Function to read record by chosen id
+     * Function to read exercise record by chosen id
      *
      * @param id id of record to read
      * @return object of model that was read
@@ -70,7 +70,7 @@ public class ExerciseDao {
     }
 
     /**
-     * Function to update record
+     * Function to update exercise record
      *
      * @param exercise object to be updated
      */
@@ -88,7 +88,7 @@ public class ExerciseDao {
     }
 
     /**
-     * Function to delete record
+     * Function to delete exercise record
      *
      * @param id id of record to be deleted
      */
