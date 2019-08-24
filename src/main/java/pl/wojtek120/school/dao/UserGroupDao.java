@@ -14,6 +14,12 @@ public class UserGroupDao {
     private static final String DELETE_USERGROUP_QUERY = "DELETE FROM user_group WHERE id=?";
     private static final String FIND_ALL_USERGROUPS_QUERY = "SELECT * FROM user_group";
 
+    /**
+     * Function to create new user_group record
+     *
+     * @param userGroup solution data model
+     * @return created solution model
+     */
     public UserGroup create(UserGroup userGroup) {
         try (Connection connection = DbUtil.getConnection()) {
             PreparedStatement statement = connection.prepareStatement(CREATE_USERGROUP_QUERY, Statement.RETURN_GENERATED_KEYS);
@@ -34,6 +40,12 @@ public class UserGroupDao {
         return userGroup;
     }
 
+    /**
+     * Function to read record by chosen id
+     *
+     * @param id id of record to read
+     * @return object of model that was read
+     */
     public UserGroup read(int id) {
 
         try (Connection connection = DbUtil.getConnection()) {
@@ -56,11 +68,16 @@ public class UserGroupDao {
         return null;
     }
 
-    public void update(UserGroup user) {
+    /**
+     * Function to update user_group record
+     *
+     * @param userGroup object to be updated
+     */
+    public void update(UserGroup userGroup) {
         try (Connection connection = DbUtil.getConnection()) {
             PreparedStatement statement = connection.prepareStatement(UPDATE_USERGROUP_QUERY);
-            statement.setString(1, user.getName());
-            statement.setInt(2, user.getId());
+            statement.setString(1, userGroup.getName());
+            statement.setInt(2, userGroup.getId());
 
             statement.executeUpdate();
 
@@ -69,6 +86,11 @@ public class UserGroupDao {
         }
     }
 
+    /**
+     * Function to delete user_group record
+     *
+     * @param id id of record to be deleted
+     */
     public void delete(int id) {
         try (Connection connection = DbUtil.getConnection()) {
             PreparedStatement statement = connection.prepareStatement(DELETE_USERGROUP_QUERY);
@@ -79,6 +101,11 @@ public class UserGroupDao {
         }
     }
 
+    /**
+     * Function to return list of all user_group records from database
+     *
+     * @return list of all records
+     */
     public List<UserGroup> findAll() {
         try (Connection connection = DbUtil.getConnection()) {
            List<UserGroup> userGroups = new ArrayList<>();

@@ -46,7 +46,7 @@ public class SolutionDao {
     }
 
     /**
-     * Function to read record by chosen id
+     * Function to read solution record by chosen id
      *
      * @param id id of record to read
      * @return object of model that was read
@@ -70,7 +70,7 @@ public class SolutionDao {
     }
 
     /**
-     * Function to update record
+     * Function to update solution record
      *
      * @param solution object to be updated
      */
@@ -89,7 +89,7 @@ public class SolutionDao {
     }
 
     /**
-     * Function to delete record
+     * Function to delete solution record
      *
      * @param id id of record to be deleted
      */
@@ -105,7 +105,7 @@ public class SolutionDao {
     }
 
     /**
-     * Function to return list of all records from database
+     * Function to return list of all solution records from database
      *
      * @return list of all records
      */
