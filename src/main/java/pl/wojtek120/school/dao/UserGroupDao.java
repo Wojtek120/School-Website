@@ -5,7 +5,6 @@ import pl.wojtek120.school.utils.DbUtil;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class UserGroupDao {
