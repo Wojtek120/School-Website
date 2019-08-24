@@ -31,17 +31,17 @@ create table if not exists users
 
 create table if not exists solution
 (
-	id int auto_increment
-		primary key,
-	created datetime  default CURRENT_TIMESTAMP,
-	updated datetime default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-	description text null,
-	exercise_id int not null,
-	user_id int not null,
-	constraint solution_ibfk_1
-		foreign key (exercise_id) references exercise (id),
-	constraint solution_ibfk_2
-		foreign key (user_id) references users (id)
+    id int auto_increment
+        primary key,
+    created timestamp not null default CURRENT_TIMESTAMP,
+    updated timestamp not null default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+    description text null,
+    exercise_id int not null,
+    user_id int not null,
+    constraint solution_ibfk_1
+        foreign key (exercise_id) references exercise (id),
+    constraint solution_ibfk_2
+        foreign key (user_id) references users (id)
 );
 
 create index exercise_id
