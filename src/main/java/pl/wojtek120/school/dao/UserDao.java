@@ -4,7 +4,9 @@ import pl.wojtek120.school.models.User;
 import pl.wojtek120.school.utils.DbUtil;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class UserDao {
     private static final String CREATE_USER_QUERY = "INSERT INTO programming_school.users (email, username, password, user_group_id) VALUES (?, ?, ?, ?)";
@@ -81,23 +83,17 @@ public class UserDao {
         }
     }
 
-    public User[] findAll() {
+    public List<User> findAll() {
         return getUsers(-1, FIND_ALL_USERS_QUERY);
     }
 
-    private User[] addToArray(User u, User[] users) {
-        User[] tmpUsers = Arrays.copyOf(users, users.length + 1);
-        tmpUsers[users.length] = u;
-        return tmpUsers;
-    }
-
-    public User[] findAllByGroupId(int groupId) {
+    public List<User> findAllByGroupId(int groupId) {
         return getUsers(groupId, FIND_ALL_BY_GROUP_QUERY);
     }
 
-    private User[] getUsers(int id, String query) {
+    private List<User> getUsers(int id, String query) {
         try (Connection conn = DbUtil.getConnection()) {
-            User[] users = new User[0];
+            List<User> users = new ArrayList<>();
             PreparedStatement statement = conn.prepareStatement(query);
 
             if (id != -1) {
@@ -107,7 +103,7 @@ public class UserDao {
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
                     User user = putDataFromResultSetIntoUser(resultSet);
-                    users = addToArray(user, users);
+                    users.add(user);
                 }
                 return users;
             }
