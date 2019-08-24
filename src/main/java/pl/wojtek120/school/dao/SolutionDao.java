@@ -124,7 +124,7 @@ public class SolutionDao {
     }
 
     /**
-     * Function to return list of all records from database that have user id specified as parameter
+     * Function to return list of all solution records from database that have user id specified as parameter
      *
      * @param userId id of user which returned record must contain
      * @return list of records
@@ -134,7 +134,7 @@ public class SolutionDao {
     }
 
     /**
-     * Function to return list of records sorted descending by update.
+     * Function to return list of solution records sorted descending by update.
      *
      * @param limit - number of records to be returned
      * @return list od data
@@ -156,11 +156,11 @@ public class SolutionDao {
             List<Solution> solutions = new ArrayList<>();
             try (PreparedStatement statement = connection.prepareStatement(query)) {
 
-                if (id <= 0) {
+                if (id > 0) {
                     statement.setInt(1, id);
                 }
 
-                if (limit <= 0) {
+                if (limit > 0) {
                     statement.setInt(1, limit);
                 }
 
