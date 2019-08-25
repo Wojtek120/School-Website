@@ -21,6 +21,12 @@ public class Solution {
         this.userId = userId;
     }
 
+    public Solution(String description, int exerciseId, int userId) {
+        this.description = description;
+        this.exerciseId = exerciseId;
+        this.userId = userId;
+    }
+
     public int getId() {
         return id;
     }
