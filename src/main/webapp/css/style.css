@@ -14,3 +14,18 @@ th {
     background-color: #727176;
     color: white;
 }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #a9a9a9;
+    color: black;
+    text-align: center;
+}
+
+.header {
+    background-color: #a9a9a9;
+    color: black;
+}

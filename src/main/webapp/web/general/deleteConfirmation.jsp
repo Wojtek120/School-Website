@@ -15,6 +15,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+<%@include file="/web/general/header.jsp"%>
 <div class="container">
     <form class="text-center" action="/solution/delete?id=${id}" method="post">
         <h2>Are you sure you want to delete ${name}?</h2>
@@ -22,5 +23,6 @@
         <button class="btn btn-color rounded-0" type="submit" name="yesButton">Yes</button>
     </form>
 </div>
+<%@include file="/web/general/footer.jsp"%>
 </body>
 </html>
