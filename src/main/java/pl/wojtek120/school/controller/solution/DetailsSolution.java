@@ -12,37 +12,25 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/solution/edit")
-public class EditSolution extends HttpServlet {
+@WebServlet("/solution/details")
+public class DetailsSolution extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        SolutionDao solutionDao = new SolutionDao();
 
-        int solutionId = Integer.parseInt(request.getParameter("id"));
-        int userId = Integer.parseInt(request.getParameter("chooseUser"));
-        int exerciseId = Integer.parseInt(request.getParameter("chooseExercise"));
-        String description = request.getParameter("description");
-
-        Solution solution = solutionDao.read(solutionId);
-        solution.setUserId(userId);
-        solution.setExerciseId(exerciseId);
-        solution.setDescription(description);
-        solutionDao.update(solution);
-
-        response.sendRedirect("/");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        SolutionDao solutionDao = new SolutionDao();
         ExerciseDao exerciseDao = new ExerciseDao();
         UserDao userDao = new UserDao();
 
-        SolutionDao solutionDao = new SolutionDao();
         int id = Integer.parseInt(request.getParameter("id"));
+
         Solution solution = solutionDao.read(id);
 
         request.setAttribute("solution", solution);
-        request.setAttribute("exercises", exerciseDao.findAll());
-        request.setAttribute("users", userDao.findAll());
+        request.setAttribute("exercise", exerciseDao.read(solution.getExerciseId()));
+        request.setAttribute("user", userDao.read(solution.getUserId()));
 
-        getServletContext().getRequestDispatcher("/web/solution/editSolution.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/web/solution/detailsSolution.jsp").forward(request, response);
     }
 }

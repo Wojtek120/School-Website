@@ -35,8 +35,9 @@
             <td>${solution.updated}</td>
             <td>${users.get(status.index).username}</td>
             <td>
-                <a href='<c:url value="/solution/delete?id=${solution.id}"/>'>Delete</a>
+                <a href='<c:url value="/solution/details?id=${solution.id}"/>'>Details</a>
                 <a href='<c:url value="/solution/edit?id=${solution.id}"/>'>Edit</a>
+                <a href='<c:url value="/solution/delete?id=${solution.id}"/>'>Delete</a>
             </td>
         </tr>
     </c:forEach>

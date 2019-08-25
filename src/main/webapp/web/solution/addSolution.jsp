@@ -17,6 +17,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+<%@include file="/web/general/header.jsp"%>
 <div class="container">
     <h2>Add new solution</h2>
     <form class="text-center" action="/solution/add" method="post">
