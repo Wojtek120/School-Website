@@ -45,5 +45,6 @@
         <button class="btn btn-color rounded-0" type="submit">Add solution</button>
     </form>
 </div>
+<%@include file="/web/general/footer.jsp"%>
 </body>
 </html>

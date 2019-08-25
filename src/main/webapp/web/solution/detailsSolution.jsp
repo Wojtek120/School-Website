@@ -37,5 +37,6 @@
     <h3>Updated:</h3>
     <p>${solution.updated}</p>
 </div>
+<%@include file="/web/general/footer.jsp"%>
 </body>
 </html>
