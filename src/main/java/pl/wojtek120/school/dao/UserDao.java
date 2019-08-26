@@ -14,7 +14,7 @@ public class UserDao {
     private static final String UPDATE_USER_QUERY = "UPDATE programming_school.users SET email=?, username=?, password=?, user_group_id=? WHERE id=?";
     private static final String DELETE_USER_QUERY = "DELETE FROM programming_school.users WHERE id=?";
     private static final String FIND_ALL_USERS_QUERY = "SELECT * FROM programming_school.users";
-    private static final String FIND_ALL_BY_GROUP_QUERY = "SELECT * FROM programming_school.users WHERE group_id=?";
+    private static final String FIND_ALL_BY_GROUP_QUERY = "SELECT * FROM programming_school.users WHERE user_group_id=?";
 
     /**
      * Function to create new user record
