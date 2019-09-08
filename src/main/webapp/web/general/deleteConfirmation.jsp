@@ -21,7 +21,7 @@
 <body>
 <%@include file="/web/general/header.jsp"%>
 <div class="container">
-    <form class="text-center" action="/solution/delete?id=${id}" method="post">
+    <form class="text-center" action="/${delete}/delete?id=${id}" method="post">
         <h2>Are you sure you want to delete ${name}?</h2>
         <button class="btn btn-color rounded-0" type="button" name="noButton" onclick="history.back()">No </button>
         <button class="btn btn-color rounded-0" type="submit" name="yesButton">Yes</button>

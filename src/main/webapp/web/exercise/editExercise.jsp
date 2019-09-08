@@ -1,15 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
   User: wojciech
-  Date: 05.09.19
-  Time: 12:26
+  Date: 08.09.19
+  Time: 15:40
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Add solution</title>
+    <title>Add exercise</title>
 
     <style>
         <%@ include file="/css/style.css"%>
@@ -22,22 +22,18 @@
 <body>
 <%@include file="/web/general/header.jsp"%>
 <div class="container">
-    <h2>Add new group</h2>
+    <h2>Edit exercise</h2>
 
-    <form class="text-center" action="/admin/group/add" method="post">
+    <form class="text-center" action="/admin/exercise/edit?id=${exercise.id}" method="post">
         <div class="form-group">
-            <label for="groupName">Name of group</label>
-            <input type="text" class="form-control" name="GroupName" id="groupName">
+            <label for="exerciseTitle">Exercise title</label>
+            <input type="text" class="form-control" name="exerciseTitle" id="exerciseTitle" value="${exercise.title}">
         </div>
         <div class="form-group">
-            <label for="chooseUser">Users</label>
-            <select multiple class="form-control" id="chooseUser" name="chooseUser">
-                <c:forEach items="${users}" var="user">
-                    <option value="${user.id}">${user.username}</option>
-                </c:forEach>
-            </select>
+            <label for="exerciseDescription">Exercise description</label>
+            <input type="text" class="form-control" name="exerciseDescription" id="exerciseDescription" value="${exercise.description}">
         </div>
-        <button class="btn btn-color rounded-0" type="submit">Add group</button>
+        <button class="btn btn-color rounded-0" type="submit">Edit exercise</button>
     </form>
 </div>
 <%@include file="/web/general/footer.jsp"%>

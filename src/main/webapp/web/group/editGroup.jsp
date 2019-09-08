@@ -24,7 +24,7 @@
 <div class="container">
     <h2>Add new group</h2>
 
-    <form class="text-center" action="/group/edit?id=${group.id}" method="post">
+    <form class="text-center" action="/admin/group/edit?id=${group.id}" method="post">
         <div class="form-group">
             <label for="groupName">Name of group</label>
             <input type="text" class="form-control" name="GroupName" id="groupName" value="${group.name}">
@@ -37,7 +37,7 @@
                 </c:forEach>
             </select>
         </div>
-        <button class="btn btn-color rounded-0" type="submit">Add group</button>
+        <button class="btn btn-color rounded-0" type="submit">Edit group</button>
     </form>
 </div>
 <%@include file="/web/general/footer.jsp"%>

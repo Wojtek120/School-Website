@@ -81,7 +81,11 @@ public class UserDao {
             statement.setString(1, user.getEmail());
             statement.setString(2, user.getUsername());
             statement.setString(3, user.getPassword());
-            statement.setInt(4, user.getUserGroupId());
+            if(user.getUserGroupId() == 0){
+                statement.setNull(4, Types.INTEGER);
+            } else {
+                statement.setInt(4, user.getUserGroupId());
+            }
             statement.setInt(5, user.getId());
             statement.executeUpdate();
 

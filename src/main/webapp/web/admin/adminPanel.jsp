@@ -21,13 +21,16 @@
 <%@include file="/web/general/header.jsp"%>
 <div class="container">
     <h1>Go to:</h1>
-    <a href="">
+    <a href="/admin/exercise">
         <h3>Exercise list</h3>
+    </a>
+    <a href="/admin/solution">
+        <h3>Solution list</h3>
     </a>
     <a href="/admin/groups">
         <h3>User groups list</h3>
     </a>
-    <a href="">
+    <a href="/admin/user">
         <h3>Users list</h3>
     </a>
 

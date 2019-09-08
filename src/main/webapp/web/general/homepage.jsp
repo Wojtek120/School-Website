@@ -17,7 +17,7 @@
 <%@include file="header.jsp"%>
 <div class="container">
 <h2>Recent solution list</h2>
-<h4>  <a href='<c:url value="/solution/add"/>'>Add new solution</a> </h4>
+<%--<h4>  <a href='<c:url value="/solution/add"/>'>Add new solution</a> </h4>--%>
 <table>
     <tr>
         <th>Exercise</th>
@@ -36,8 +36,8 @@
             <td>${users.get(status.index).username}</td>
             <td>
                 <a href='<c:url value="/solution/details?id=${solution.id}"/>'>Details</a>
-                <a href='<c:url value="/solution/edit?id=${solution.id}"/>'>Edit</a>
-                <a href='<c:url value="/solution/delete?id=${solution.id}"/>'>Delete</a>
+<%--                <a href='<c:url value="/solution/edit?id=${solution.id}"/>'>Edit</a>--%>
+<%--                <a href='<c:url value="/solution/delete?id=${solution.id}"/>'>Delete</a>--%>
             </td>
         </tr>
     </c:forEach>

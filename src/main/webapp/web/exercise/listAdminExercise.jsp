@@ -1,15 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
   User: wojciech
-  Date: 26.08.19
-  Time: 23:32
+  Date: 08.09.19
+  Time: 15:06
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-    <title>Group list</title>
+    <title>Exercise list</title>
 
     <style>
         <%@ include file="/css/style.css"%>
@@ -23,20 +23,21 @@
 <body>
 <%@include file="/web/general/header.jsp"%>
 <div class="container">
-    <h2>Group list</h2>
-    <h4>  <a href='<c:url value="/admin/group/add"/>'>Add new group</a> </h4>
+    <h2>Exercise list</h2>
+    <h4>  <a href='<c:url value="/admin/exercise/add"/>'>Add new exercise</a> </h4>
     <table>
         <tr>
-            <th>Group name</th>
+            <th>Exercise title</th>
+            <th>Exercise description</th>
             <th>Action</th>
         </tr>
-        <c:forEach items="${groups}" var="group" varStatus="status">
+        <c:forEach items="${exercises}" var="exercise" varStatus="status">
             <tr>
-                <td>${group.name}</td>
+                <td>${exercise.title}</td>
+                <td>${exercise.description}</td>
                 <td>
-                    <a href='<c:url value="/group/users?id=${group.id}"/>'>Users</a>
-                    <a href='<c:url value="/admin/group/edit?id=${group.id}"/>'>Edit</a>
-                    <a href='<c:url value="/admin/group/delete?id=${group.id}"/>'>Delete</a>
+                    <a href='<c:url value="/admin/exercise/edit?id=${exercise.id}"/>'>Edit</a>
+                    <a href='<c:url value="/admin/exercise/delete?id=${exercise.id}"/>'>Delete</a>
                 </td>
             </tr>
         </c:forEach>
