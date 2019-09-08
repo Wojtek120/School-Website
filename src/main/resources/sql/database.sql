@@ -22,7 +22,7 @@ create table if not exists users
 	email varchar(255) null,
 	username varchar(255) null,
 	password varchar(255) null,
-	user_group_id int not null,
+	user_group_id int null,
 	constraint email
 		unique (email),
 	constraint users_ibfk_1

@@ -1,14 +1,15 @@
 <%--
   Created by IntelliJ IDEA.
   User: wojciech
-  Date: 25.08.19
-  Time: 21:27
+  Date: 08.09.19
+  Time: 15:22
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Delete</title>
+    <title>Add exercise</title>
 
     <style>
         <%@ include file="/css/style.css"%>
@@ -21,10 +22,18 @@
 <body>
 <%@include file="/web/general/header.jsp"%>
 <div class="container">
-    <form class="text-center" action="/${delete}/delete?id=${id}" method="post">
-        <h2>Are you sure you want to delete ${name}?</h2>
-        <button class="btn btn-color rounded-0" type="button" name="noButton" onclick="history.back()">No </button>
-        <button class="btn btn-color rounded-0" type="submit" name="yesButton">Yes</button>
+    <h2>Add new exercise</h2>
+
+    <form class="text-center" action="/admin/exercise/add" method="post">
+        <div class="form-group">
+            <label for="exerciseTitle">Exercise title</label>
+            <input type="text" class="form-control" name="exerciseTitle" id="exerciseTitle">
+        </div>
+        <div class="form-group">
+            <label for="exerciseDescription">Exercise description</label>
+            <input type="text" class="form-control" name="exerciseDescription" id="exerciseDescription">
+        </div>
+        <button class="btn btn-color rounded-0" type="submit">Add exercise</button>
     </form>
 </div>
 <%@include file="/web/general/footer.jsp"%>

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/solution/edit")
+@WebServlet("/admin/solution/edit")
 public class EditSolution extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SolutionDao solutionDao = new SolutionDao();
@@ -28,7 +28,7 @@ public class EditSolution extends HttpServlet {
         solution.setDescription(description);
         solutionDao.update(solution);
 
-        response.sendRedirect("/");
+        response.sendRedirect("/admin/solution");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

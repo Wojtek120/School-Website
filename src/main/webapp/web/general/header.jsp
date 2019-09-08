@@ -25,7 +25,7 @@
             <a class="nav-link" href="/groups">Groups</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="/admin/panel">Admin panel</a>
         </li>
     </ul>
 </div>

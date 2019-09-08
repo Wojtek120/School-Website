@@ -23,7 +23,7 @@
 <%@include file="/web/general/header.jsp"%>
 <div class="container">
     <h2>Add new solution</h2>
-    <form class="text-center" action="/solution/edit?id=${solution.id}" method="post">
+    <form class="text-center" action="/admin/solution/edit?id=${solution.id}" method="post">
         <div class="form-group">
             <label for="description">Description</label>
             <textarea class="form-control" id="description" name="description"

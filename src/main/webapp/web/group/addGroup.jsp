@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: wojciech
-  Date: 25.08.19
-  Time: 17:27
+  Date: 05.09.19
+  Time: 12:26
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -22,30 +22,22 @@
 <body>
 <%@include file="/web/general/header.jsp"%>
 <div class="container">
-    <h2>Add new solution</h2>
-    <form class="text-center" action="/admin/solution/add" method="post">
+    <h2>Add new group</h2>
+
+    <form class="text-center" action="/admin/group/add" method="post">
         <div class="form-group">
-            <label for="description">Description</label>
-            <textarea class="form-control" id="description" name="description"
-                      placeholder="Solution description"></textarea>
+            <label for="groupName">Name of group</label>
+            <input type="text" class="form-control" name="GroupName" id="groupName">
         </div>
         <div class="form-group">
-            <label for="chooseExercise">Exercise</label>
-            <select class="form-control" id="chooseExercise" name="chooseExercise">
-                <c:forEach items="${exercises}" var="exercise">
-                    <option value="${exercise.id}">${exercise.title}</option>
-                </c:forEach>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="chooseUser">User</label>
-            <select class="form-control" id="chooseUser" name="chooseUser">
+            <label for="chooseUser">Users</label>
+            <select multiple class="form-control" id="chooseUser" name="chooseUser">
                 <c:forEach items="${users}" var="user">
                     <option value="${user.id}">${user.username}</option>
                 </c:forEach>
             </select>
         </div>
-        <button class="btn btn-color rounded-0" type="submit">Add solution</button>
+        <button class="btn btn-color rounded-0" type="submit">Add group</button>
     </form>
 </div>
 <%@include file="/web/general/footer.jsp"%>

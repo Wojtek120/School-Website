@@ -1,15 +1,14 @@
 <%--
   Created by IntelliJ IDEA.
   User: wojciech
-  Date: 25.08.19
-  Time: 21:27
+  Date: 05.09.19
+  Time: 12:00
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Delete</title>
-
+    <title>Admin panel</title>
     <style>
         <%@ include file="/css/style.css"%>
     </style>
@@ -21,11 +20,22 @@
 <body>
 <%@include file="/web/general/header.jsp"%>
 <div class="container">
-    <form class="text-center" action="/${delete}/delete?id=${id}" method="post">
-        <h2>Are you sure you want to delete ${name}?</h2>
-        <button class="btn btn-color rounded-0" type="button" name="noButton" onclick="history.back()">No </button>
-        <button class="btn btn-color rounded-0" type="submit" name="yesButton">Yes</button>
-    </form>
+    <h1>Go to:</h1>
+    <a href="/admin/exercise">
+        <h3>Exercise list</h3>
+    </a>
+    <a href="/admin/solution">
+        <h3>Solution list</h3>
+    </a>
+    <a href="/admin/groups">
+        <h3>User groups list</h3>
+    </a>
+    <a href="/admin/user">
+        <h3>Users list</h3>
+    </a>
+
+
+
 </div>
 <%@include file="/web/general/footer.jsp"%>
 </body>
